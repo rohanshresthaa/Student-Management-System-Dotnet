@@ -9,6 +9,6 @@ namespace Student_Management_System.Models
         {
             
         }
-        public DbSet<SignUp> signUps { get; set; }
+        public DbSet<SignUp> SignUps { get; set; }
     }
 }
