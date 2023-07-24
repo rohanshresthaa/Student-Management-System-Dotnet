@@ -10,5 +10,10 @@ namespace Student_Management_System.Models
             
         }
         public DbSet<SignUp> SignUps { get; set; }
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<Level> Levels { get; set; }
+
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<StudentRegistration> StudentRegistrations { get; set;}
     }
 }
