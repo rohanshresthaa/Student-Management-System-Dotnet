@@ -22,9 +22,37 @@ namespace Student_Management_System.Controllers
         // GET: StudentRegistrations
         public async Task<IActionResult> Index()
         {
-            return _context.StudentRegistrations != null ?
-                        View(await _context.StudentRegistrations.ToListAsync()) :
-                        Problem("Entity set 'MyDBContext.StudentRegistrations'  is null.");
+            var modellList = new List<StudentRegistrationViewModel>();
+            try
+            {
+                var studentData = await _context.StudentRegistrations.ToListAsync();
+                foreach (var student in studentData)
+                {
+                    var levelData = await _context.Levels.FirstOrDefaultAsync(x => x.Id == student.LevelId);
+                    var groupData = await _context.Groups.FirstOrDefaultAsync(x => x.Id == student.GroupId);
+                    var courseData = await _context.Courses.FirstOrDefaultAsync(x => x.Id == student.CourseId);
+
+                  
+
+                    modellList.Add(new StudentRegistrationViewModel
+                    {
+                        Id = student.Id,
+                        Name = student.Name,
+                        Address = student.Address,
+                        PhoneNo = student.PhoneNo,
+                        CourseName = courseData != null ? courseData.Name : "",
+                        GroupName = groupData != null ? groupData.Name : "",
+                        LevelName = levelData != null ? levelData.Name : ""
+
+                    });
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return View(modellList);
         }
 
         // GET: StudentRegistrations/Details/5
@@ -111,11 +139,48 @@ namespace Student_Management_System.Controllers
             }
 
             var studentRegistration = await _context.StudentRegistrations.FindAsync(id);
-            if (studentRegistration == null)
+            var model = new StudentRegistrationViewModel();
+            try
             {
-                return NotFound();
+                var groupList = new List<SelectListItem>();
+                var getGroupData = await _context.Groups.ToListAsync();
+                var courseList = new List<SelectListItem>();
+                var getCourseData = await _context.Courses.ToListAsync();
+                var levelList = new List<SelectListItem>();
+                var getLevelData = await _context.Levels.ToListAsync();
+                foreach (var item in getCourseData)
+                {
+                    courseList.Add(new SelectListItem { Text = item.Name, Value = item.Id.ToString() });
+                }
+                foreach (var item in getLevelData)
+                {
+                    levelList.Add(new SelectListItem { Text = item.Name, Value = item.Id.ToString() });
+                }
+                foreach (var group in getGroupData)
+                {
+                    groupList.Add(new SelectListItem { Text = group.Name, Value = group.Id.ToString() });
+                }
+                model.GroupData = groupList;
+                model.CourseData = courseList;
+                model.LevelData = levelList;
+                model.Name = studentRegistration.Name;
+                model.Address = studentRegistration.Address;
+                model.PhoneNo = studentRegistration.PhoneNo;
+                model.Email = studentRegistration.Email;
+                model.CourseId = studentRegistration.CourseId;
+                model.LevelId = studentRegistration.LevelId;
+                model.GroupId = studentRegistration.GroupId;
             }
-            return View(studentRegistration);
+            catch (Exception ex)
+            {
+
+            }
+            return View(model);
+           // if (studentRegistration == null)
+            //{
+              //  return NotFound();
+            //}
+           // return View(studentRegistration);
         }
 
         // POST: StudentRegistrations/Edit/5

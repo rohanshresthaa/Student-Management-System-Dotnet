@@ -1,4 +1,4 @@
-﻿@model Student_Management_System.Models.StudentRegistration
+﻿@model Student_Management_System.ViewModel.StudentRegistrationViewModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -13,19 +13,25 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="GroupId" class="control-label"></label>
-                <input asp-for="GroupId" class="form-control" />
+            <div class="form-group m-2">
+                <label class="control-label">Group</label>
+                <div>
+                    @Html.DropDownListFor(x=>x.GroupId, Model.GroupData, "Select Group")
+                </div>
                 <span asp-validation-for="GroupId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="LevelId" class="control-label"></label>
-                <input asp-for="LevelId" class="form-control" />
+            <div class="form-group m-2">
+                <label class="control-label">Level</label>
+                <div>
+                    @Html.DropDownListFor(x=>x.LevelId, Model.LevelData, "Select Level")
+                </div>
                 <span asp-validation-for="LevelId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="CourseId" class="control-label"></label>
-                <input asp-for="CourseId" class="form-control" />
+            <div class="form-group m-2">
+                <label class="control-label">Course</label>
+                <div>
+                    @Html.DropDownListFor(x =>x.CourseId, Model.CourseData, "Select Course")
+                </div>
                 <span asp-validation-for="CourseId" class="text-danger"></span>
             </div>
             <div class="form-group">
