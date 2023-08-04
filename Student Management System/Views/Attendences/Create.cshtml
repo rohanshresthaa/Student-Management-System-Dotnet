@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Create";
+}
+<script src="~/js/angularjs.js"></script>
+<script src="~/js/attendance/attendancecreate.js"></script>
+<h1>Create Attendence</h1>
+
+<hr />
+<div ng-app="AttendanceModel" ng-controller="AttendanceController" ng-init="init(@Newtonsoft.Json.JsonConvert.SerializeObject( ViewData["AttendanceDataList"]))">
+   
+
+
+    <div class="row">
+        <div class="col-md-8">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="d-flex flex-row">
+                <div class="form-group m-2">
+                    <label class="control-label">Date</label>
+                    <input ng-model="Date" class="form-control" type="date" />
+                </div>
+                <div class="m-2">
+                    <label class="control-label">Course</label>
+                    <select ng-model="CourseId" name="course" class="form-control">
+                        <option value="">--Select Course--</option>
+                        <option ng-repeat="option in courseList" value="{{option.Id}}">{{option.Name}}</option>
+                    </select>
+                </div>
+
+                <div class="m-2">
+                    <label class="control-label">Group</label>
+                    <select ng-model="GroupId" name="group" class="form-control">
+                        <option value="">--Select Group--</option>
+                        <option ng-repeat="option in groupList" value="{{option.Id}}">{{option.Name}}</option>
+                    </select>
+                </div>
+                <div class="m-2">
+                    <label class="control-label">Level</label>
+                    <select ng-model="LevelId" name="level" class="form-control">
+                        <option value="">--Select Level--</option>
+                        <option ng-repeat="option in levelList" value="{{option.Id}}">{{option.Name}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-group mt-5">
+                <input type="button" value="Save" ng-click="onClickSaveBtn()" class="btn btn-primary" />
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

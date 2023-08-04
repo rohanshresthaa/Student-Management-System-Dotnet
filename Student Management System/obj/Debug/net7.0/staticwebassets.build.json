@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qiyyvgj0g2P+NwXfFYh+QFkZZL4ANLLwWit1dWdJgMg=",
+  "Hash": "ADXh/67N3UqPbeSrQ/L/G5eWsbkdi0Xrh7o+mFi28Co=",
   "Source": "Student Management System",
   "BasePath": "_content/Student Management System",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\.net\\Student Management System\\Student Management System\\wwwroot\\js\\AngularJs.js",
+      "SourceId": "Student Management System",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\.net\\Student Management System\\Student Management System\\wwwroot\\",
+      "BasePath": "_content/Student Management System",
+      "RelativePath": "js/AngularJs.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\AngularJs.js"
+    },
+    {
+      "Identity": "D:\\.net\\Student Management System\\Student Management System\\wwwroot\\js\\Attendance\\AttendanceCreate.js",
+      "SourceId": "Student Management System",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\.net\\Student Management System\\Student Management System\\wwwroot\\",
+      "BasePath": "_content/Student Management System",
+      "RelativePath": "js/Attendance/AttendanceCreate.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Attendance\\AttendanceCreate.js"
     },
     {
       "Identity": "D:\\.net\\Student Management System\\Student Management System\\wwwroot\\js\\site.js",

@@ -15,5 +15,7 @@ namespace Student_Management_System.Models
 
         public DbSet<Course> Courses { get; set; }
         public DbSet<StudentRegistration> StudentRegistrations { get; set;}
+        public DbSet<Attendence> Attendances { get; set; }
+        public DbSet<AttendenceDetail> AttendenceDetails { get; set; }
     }
 }

@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\.net\\Student Management System\\Student Management System\\wwwroot\\js\\AngularJs.js",
+      "PackagePath": "staticwebassets\\js\\AngularJs.js"
+    },
+    {
+      "Id": "D:\\.net\\Student Management System\\Student Management System\\wwwroot\\js\\Attendance\\AttendanceCreate.js",
+      "PackagePath": "staticwebassets\\js\\Attendance\\AttendanceCreate.js"
+    },
+    {
       "Id": "D:\\.net\\Student Management System\\Student Management System\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
